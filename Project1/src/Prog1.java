@@ -3,21 +3,27 @@ public class Prog1 {
 	
 	public static void main(String[] args ){
 		
-		int rec =fib(5, , );
-		
-		System.out.println(rec);
+	
+	fib(5);
+	
 	}
 	
 	
-	public static int fib(){
+	public static int fib(int num){
 		
 		
 		
+				
+		if(num <= 1){
 		
-		return fib(  , , )
+			return num;
+		}
+		int f = fib(num - 1) + fib(num - 2); 
+		
+		System.out.println(f);
+		
+		return f;
 	}
-	
-	
 	
 	
 }
