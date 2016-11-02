@@ -1,0 +1,29 @@
+
+public class Prog1 {
+	
+	public static void main(String[] args ){
+		
+	
+	System.out.print(fib(5) );
+	
+	}
+	
+	
+	public static int fib(int num){
+		
+		
+		
+				
+		if(num <= 1){
+		
+			return num;
+		}
+		int f = fib(num - 1) + fib(num - 2); 
+		
+	
+		
+		return f;
+	}
+	
+	
+}

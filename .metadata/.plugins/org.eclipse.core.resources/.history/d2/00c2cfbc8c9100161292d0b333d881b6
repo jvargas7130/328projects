@@ -1,0 +1,33 @@
+
+public class Prog1 {
+	
+	public static void main(String[] args ){
+		
+	
+	System.out.print(fib(7) );
+	
+	}
+	
+	
+	public static int fib(int num){
+		
+		int sum = 0;
+		int f;
+		
+				
+		if(num <= 1){
+		
+			return num;
+		}
+
+		
+		 f = fib(num - 1) + fib(num - 2); 
+		System.out.println("f: "+ f);
+		 sum = sum + f;
+		System.out.println(sum);
+		
+		return sum;
+	}
+	
+	
+}
