@@ -1,0 +1,97 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class tester {
+
+	public static void main(String[] args) {
+
+		ArrayList<String> table = new ArrayList<String>();
+		readInFile("test.txt", table);
+		// part 1
+		//multiplication(table);
+
+		division(table);
+
+	}
+
+	public static void readInFile(String fileName, ArrayList<String> title) {
+
+		// Reads in Files
+		try {
+			Scanner read = new Scanner(new File(fileName));
+			do {
+
+				String line = read.nextLine();
+				// String[] tokens = line.split(" ");
+				title.add(line);
+
+			} while (read.hasNext());
+			read.close();
+		} catch (FileNotFoundException fnf) {
+			System.out.println("File was not found");
+		}
+
+	}
+
+	public static void multiplication(ArrayList<String> t) {
+
+		for (int i = 0; i < t.size(); i++) {
+
+			String string = t.get(i);
+			System.out.println(string);
+
+			double sum = 0;
+			for (int j = 0; j < 25; j++) {
+				char c = string.charAt(j);
+
+				int s = (int) c;
+
+				// double product = (double) (s * Math.pow(5, j));
+
+				sum = sum + s;
+
+			}
+
+			double p = 0.68033989;
+			int m = 300;
+			sum = Math.floor(m * (sum * p - Math.floor(sum * p)));
+
+			// sum *= 0.68033989;
+			// sum = sum - Math.floor(sum);
+
+			// System.out.println(((Math.floor(sum) * 300)));
+			System.out.println(sum);
+
+		}
+	}
+
+	public static void division(ArrayList<String> t) {
+		
+		
+		
+		System.out.println("Hello");
+		for (int i = 0; i < t.size(); i++) {
+
+			String string = t.get(i);
+			System.out.println(string);
+			double sum = 0;
+
+			for (int j = 0; j < 25; j++) {
+				char c = string.charAt(j);
+				int s = (int) c;
+				sum = sum + (s * 128);
+
+			}
+
+			double mod = sum % 233;
+
+			System.out.println(mod);
+
+		}
+
+	}
+
+}
